@@ -25,8 +25,6 @@ const SignUpForm = () => {
         localStorage.setItem('username', ciphertextUsername)
         localStorage.setItem('email', formValues.email)
         localStorage.setItem('password', ciphertextPassword)
-    }
-    if (Object.keys(formErrors).length == 0) {
         navigate('/logIn')
     }
 

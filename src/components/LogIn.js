@@ -13,11 +13,11 @@ const LogInForm = () => {
     const navigate = useNavigate()
 
     let email = localStorage.getItem('email')
+    var usernameData = localStorage.getItem('username')
+    var passwordData = localStorage.getItem('password')
 
     // decrypting credentials    
     useEffect(() => {
-        let usernameData = localStorage.getItem('username')
-        let passwordData = localStorage.getItem('password')
         var bytes = CryptoJS.AES.decrypt(usernameData, 'my-secret-key@123');
         var decryptedUsername = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
         var bytes = CryptoJS.AES.decrypt(passwordData, 'my-secret-key@123');
